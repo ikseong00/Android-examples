@@ -27,21 +27,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_select_multiple_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="여러 이미지 선택"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_select_single_image" />
-
-    <Button
         android:id="@+id/btnSelectVideo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="단일 동영상 선택"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_select_multiple_image" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_select_single_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
