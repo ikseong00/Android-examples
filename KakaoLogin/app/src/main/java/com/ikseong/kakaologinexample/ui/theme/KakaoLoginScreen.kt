@@ -49,7 +49,27 @@ fun KakaoLoginScreen(
                     }
             )
 
+            Button(
+                onClick = getUser,
+                modifier = Modifier.padding(top = 16.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+            ) {
+                Text(
+                    text = "Get User",
+                    color = Color.Black
+                )
+            }
 
+            Button(
+                onClick = getToken,
+                modifier = Modifier.padding(top = 16.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+            ) {
+                Text(
+                    text = "Get Token",
+                    color = Color.Black
+                )
+            }
         }
     }
 }
