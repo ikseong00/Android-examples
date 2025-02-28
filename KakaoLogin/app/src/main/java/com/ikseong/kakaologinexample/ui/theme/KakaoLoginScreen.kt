@@ -27,6 +27,7 @@ fun KakaoLoginScreen(
     login: () -> Unit = {},
     getUser: () -> Unit = {},
     getToken: () -> Unit = {},
+    logout: () -> Unit = {},
 ) {
     Box(modifier = modifier.fillMaxSize()) {
         Column(
@@ -67,6 +68,17 @@ fun KakaoLoginScreen(
             ) {
                 Text(
                     text = "Get Token",
+                    color = Color.Black
+                )
+            }
+
+            Button(
+                onClick = logout,
+                modifier = Modifier.padding(top = 16.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+            ) {
+                Text(
+                    text = "Log Out",
                     color = Color.Black
                 )
             }

@@ -31,7 +31,8 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding),
                         login = { kakaoLogin(this) },
                         getUser = { getUser(this) },
-                        getToken = { getToken(this) }
+                        getToken = { getToken(this) },
+                        logout = { logout(this) }
                     )
                 }
             }
@@ -116,5 +117,15 @@ fun getToken(context: Context) {
     } else {
         //로그인 필요
         Toast.makeText(context, "토큰이 없음, 로그인 필요", Toast.LENGTH_SHORT).show()
+    }
+}
+
+fun logout(context: Context) {
+    UserApiClient.instance.logout { error ->
+        if (error != null) {
+            Log.e("KakaoTag", "로그아웃 실패. SDK에서 토큰 삭제됨", error)
+        } else {
+            Log.i("KakaoTag", "로그아웃 성공. SDK에서 토큰 삭제됨")
+        }
     }
 }
