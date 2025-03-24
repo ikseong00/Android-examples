@@ -55,7 +55,7 @@ fun RemoteImageUrlScreen(
                     .crossfade(true)
                     .listener(
                         onSuccess = { _, result ->
-                            val endTime = System.currentTimeMillis()
+                            val endTime = System.currentTimeMillis() - startTime.longValue
                             val source = result.dataSource
                             Log.d("RemoteImageUrlScreen", "End Time: $endTime Source: $source")
                         },
