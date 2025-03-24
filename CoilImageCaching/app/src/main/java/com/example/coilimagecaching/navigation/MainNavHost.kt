@@ -20,7 +20,10 @@ fun MainNavHost(innerPadding: PaddingValues) {
         startDestination = Route.DefaultUrl
     ) {
         composable<Route.DefaultUrl> {
-
+            DefaultImageUrlScreen(
+                innerPadding = innerPadding,
+                navigateToRemoteUrl = { navController.navigate(Route.RemoteUrl) }
+            )
         }
         composable<Route.RemoteUrl> {
 
