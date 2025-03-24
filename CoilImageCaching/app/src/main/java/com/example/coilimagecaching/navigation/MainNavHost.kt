@@ -11,8 +11,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import coil3.ImageLoader
 import coil3.memory.MemoryCache
+import coil3.request.ImageRequest
 import coil3.util.DebugLogger
 import com.example.coilimagecaching.screen.DefaultImageUrlScreen
+import com.example.coilimagecaching.screen.ImageUrl.imageUrls
 import com.example.coilimagecaching.screen.RemoteImageUrlScreen
 import com.example.coilimagecaching.viewmodel.ImageViewModel
 
@@ -31,10 +33,19 @@ fun MainNavHost(innerPadding: PaddingValues) {
         )
         .build()
 
+    // pre-load image urls
+    imageUrls.forEach {
+        imageLoader.enqueue(
+            ImageRequest.Builder(LocalContext.current)
+                .data(it)
+                .build()
+        )
+    }
+
     NavHost(
         modifier = Modifier.padding(innerPadding),
         navController = navController,
-        startDestination = Route.DefaultUrl
+        startDestination = Route.RemoteUrl
     ) {
         composable<Route.DefaultUrl> {
             DefaultImageUrlScreen(
