@@ -47,11 +47,11 @@ fun RemoteImageUrlScreen(
         horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        items(imageUrls.size) {
+        items(imageUrls.size) { index ->
             AsyncImage(
                 modifier = Modifier.size(100.dp),
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(imageUrls)
+                    .data(imageUrls[index])
                     .crossfade(true)
                     .listener(
                         onSuccess = { _, result ->
@@ -66,7 +66,7 @@ fun RemoteImageUrlScreen(
         }
         item {
             Button(onClick = navigateToRemoteUrl) {
-                Text("Navigate to Remote Url")
+                Text("Navigate to Default Url")
             }
         }
     }
