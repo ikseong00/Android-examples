@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import coil3.ImageLoader
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
@@ -28,6 +29,7 @@ import com.example.coilimagecaching.viewmodel.ImageViewModel
 @Composable
 fun RemoteImageUrlScreen(
     innerPadding: PaddingValues,
+    imageLoader: ImageLoader,
     navigateToRemoteUrl: () -> Unit = {},
     viewModel : ImageViewModel = viewModel()
 ) {
@@ -75,5 +77,6 @@ fun RemoteImageUrlScreen(
 private fun RemoteImageUrlScreenPreview() {
     RemoteImageUrlScreen(
         innerPadding = PaddingValues(0.dp),
+        imageLoader = ImageLoader.Builder(LocalContext.current).build()
     )
 }

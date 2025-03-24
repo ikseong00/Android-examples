@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil3.ImageLoader
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
@@ -25,6 +26,7 @@ import com.example.coilimagecaching.screen.ImageUrl.imageUrls
 @Composable
 fun DefaultImageUrlScreen(
     innerPadding: PaddingValues,
+    imageLoader: ImageLoader,
     navigateToRemoteUrl: () -> Unit = {}
 ) {
     val state = rememberLazyListState()
@@ -69,6 +71,7 @@ fun DefaultImageUrlScreen(
 private fun DefaultImageUrlScreenPreview() {
     DefaultImageUrlScreen(
         innerPadding = PaddingValues(0.dp),
+        imageLoader = ImageLoader.Builder(LocalContext.current).build(),
     )
 }
 
