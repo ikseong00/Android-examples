@@ -9,11 +9,12 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.1"
 composeBom = "2024.04.01"
-
 okhttp = "4.11.0"
 retrofit = "2.9.0"
 retrofitKotlinSerializationConverter = "1.0.0"
 kotlinxSerializationJson = "1.6.3"
+navigationCompose = "2.8.9"
+navigationComposeVersion = "2.8.9"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -41,6 +42,7 @@ okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-i
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-kotlin-serialization-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinSerializationConverter" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationComposeVersion" }
 
 
 [plugins]
